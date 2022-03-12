@@ -16,10 +16,10 @@ class ListView1Screen extends StatelessWidget {
           ...options
               .map((team) => ListTile(
                     title: Text(team),
-                    trailing: Icon(Icons.arrow_forward_ios_outlined),
+                    trailing: const Icon(Icons.arrow_forward_ios_outlined),
                   ))
               .toList(),
-          Divider(
+          const Divider(
             color: Colors.purple,
           ),
         ],

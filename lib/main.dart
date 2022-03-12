@@ -1,18 +1,20 @@
-import 'package:componentes/screens/listview1_screen.dart';
-import 'package:componentes/screens/listview2_screen.dart';
+import 'package:componentes/themes/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:componentes/router/app_routes.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Material App',
-      home: ListView2Screen(),
-    );
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Material App',
+        initialRoute: AppRoutes.initialRoute,
+        routes: AppRoutes.getAppRoutes(),
+        onGenerateRoute: AppRoutes.onGenerateRoute,
+        theme: AppTheme.darkTheme);
   }
 }
