@@ -6,31 +6,48 @@ class AppRoutes {
   static const initialRoute = 'home';
 
   static final menuOptions = <MenuOption>[
-    MenuOption(
-        route: 'home',
-        name: 'Home Screen',
-        screen: HomeScreen(),
-        icon: Icons.home),
+    // MenuOption(
+    //     route: 'home',
+    //     name: 'Home Screen',
+    //     screen: const HomeScreen(),
+    //     icon: Icons.home),
     MenuOption(
         route: 'listview1',
         name: 'List View 1',
-        screen: ListView1Screen(),
+        screen: const ListView1Screen(),
         icon: Icons.list_alt),
     MenuOption(
         route: 'listview2',
         name: 'List View 2',
-        screen: ListView2Screen(),
+        screen: const ListView2Screen(),
         icon: Icons.list_sharp),
     MenuOption(
         route: 'alert',
         name: 'Alertas',
-        screen: AlertScreen(),
+        screen: const AlertScreen(),
         icon: Icons.add_alert_outlined),
     MenuOption(
         route: 'card',
         name: 'Cards',
-        screen: CardScreen(),
+        screen: const CardScreen(),
         icon: Icons.card_giftcard),
+    MenuOption(
+        route: 'avatar',
+        name: 'Circle Avatar',
+        screen: const AvatarScreen(),
+        icon: Icons.supervised_user_circle),
+    MenuOption(
+      route: 'animated',
+      name: 'Animated Screen',
+      screen: const AnimatedScreen(),
+      icon: Icons.play_circle_outline_rounded,
+    ),
+    MenuOption(
+      route: 'inputs',
+      name: 'Text Inputs',
+      screen: const InputScreen(),
+      icon: Icons.input_rounded,
+    )
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
@@ -43,6 +60,8 @@ class AppRoutes {
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
+
+    appRoutes.addAll({'home': (BuildContext context) => const HomeScreen()});
 
     for (final option in menuOptions) {
       appRoutes.addAll({option.route: (BuildContext context) => option.screen});
