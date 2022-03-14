@@ -1,3 +1,4 @@
+import 'package:componentes/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class InputScreen extends StatelessWidget {
@@ -5,50 +6,109 @@ class InputScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<FormState> myFormKey = GlobalKey<FormState>();
+
+    final Map<String, String> formValues = {
+      'first-name': 'Luis',
+      'last-name': 'Nuñez',
+      'email': 'luis@gmail.com',
+      'password': '123456',
+      'role': 'Admin',
+    };
+
     return Scaffold(
         appBar: AppBar(title: const Text('Inputs y Forms')),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Column(
-              children: [
-                TextFormField(
-                  autofocus: false,
-                  initialValue: '',
-                  textCapitalization: TextCapitalization.words,
-                  onChanged: (value) {
-                    //('value: $value');
-                  },
-                  validator: (value) {
-                    if (value == null) {
-                      return 'Este campo es requerido';
-                    }
-                    return value.length < 3 ? 'Mínimo 3 letras' : null;
-                  },
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  decoration: const InputDecoration(
-                    hintText: 'Nombre del Usuario',
-                    labelText: 'Nombre',
-                    helperText: 'Sólo letras',
-                    counterText: '3 caracteres',
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.green),
-                    ),
-                    suffixIcon: Icon(Icons.verified_user_outlined),
-                    prefixIcon: Icon(Icons.group_outlined),
-                    icon: Icon(
-                      Icons.assignment_ind_outlined,
-                      size: 40,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
+            child: Form(
+              key: myFormKey,
+              child: Column(
+                children: [
+                  CustomInputField(
+                    labelText: "Nombre",
+                    hintText: "Nombre del Usuario",
+                    formProperty: 'first-name',
+                    formValues: formValues,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  CustomInputField(
+                    labelText: "Apellido",
+                    hintText: "Apellido del Usuario",
+                    formProperty: 'last-name',
+                    formValues: formValues,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  CustomInputField(
+                    labelText: "Correo",
+                    hintText: "Correo del Usuario",
+                    keyboardType: TextInputType.emailAddress,
+                    formProperty: 'email',
+                    formValues: formValues,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  CustomInputField(
+                    labelText: "Contraseña",
+                    hintText: "Contraseña del Usuario",
+                    formProperty: 'password',
+                    formValues: formValues,
+                    isPassword: true,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  DropdownButtonFormField<String>(
+                    items: const [
+                      DropdownMenuItem(
+                        value: 'Admin',
+                        child: Text('Admin'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Superuser',
+                        child: Text('Superuser'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Developer',
+                        child: Text('Developer'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'User',
+                        child: Text('User'),
+                      ),
+                    ],
+                    onChanged: (value) {
+                      //print(value);
+                      formValues['role'] = value ?? 'Admin';
+                    },
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  ElevatedButton(
+                    child: const SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: Center(
+                        child: Text("Guardar"),
                       ),
                     ),
-                  ),
-                ),
-              ],
+                    onPressed: () {
+                      FocusScope.of(context).requestFocus(FocusNode());
+                      if (!myFormKey.currentState!.validate()) {
+                        //print("Formulario no válido");
+                        return;
+                      }
+                      //(formValues);
+                    },
+                  )
+                ],
+              ),
             ),
           ),
         ));

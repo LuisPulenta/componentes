@@ -47,6 +47,18 @@ class AppRoutes {
       name: 'Text Inputs',
       screen: const InputScreen(),
       icon: Icons.input_rounded,
+    ),
+    MenuOption(
+      route: 'slider',
+      name: 'Slider',
+      screen: const SliderScreen(),
+      icon: Icons.slow_motion_video_outlined,
+    ),
+    MenuOption(
+      route: 'listviewbuilder',
+      name: 'InfiniteScrol & Push&Refresh',
+      screen: const ListViewBuilderScreen(),
+      icon: Icons.list,
     )
   ];
 
