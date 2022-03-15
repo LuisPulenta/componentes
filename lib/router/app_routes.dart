@@ -59,7 +59,19 @@ class AppRoutes {
       name: 'InfiniteScrol & Push&Refresh',
       screen: const ListViewBuilderScreen(),
       icon: Icons.list,
-    )
+    ),
+    MenuOption(
+      route: 'safearea',
+      name: 'Safe Area',
+      screen: const SafeAreaScreen(),
+      icon: Icons.area_chart,
+    ),
+    MenuOption(
+      route: 'expanded',
+      name: 'Expanded',
+      screen: const ExpandedScreen(),
+      icon: Icons.expand,
+    ),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
