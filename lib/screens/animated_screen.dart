@@ -13,6 +13,9 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
   double _width = 50;
   double _height = 50;
   Color _color = Colors.indigo;
+  Color _color2 = Colors.red;
+  double _border = 5;
+
   BorderRadiusGeometry _borderRadius = BorderRadius.circular(10);
 
   @override
@@ -23,12 +26,12 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
         child: AnimatedContainer(
           height: _height,
           width: _width,
-          duration: const Duration(milliseconds: 400),
-          curve: Curves.easeOutCubic,
+          duration: const Duration(milliseconds: 1500),
+          curve: Curves.elasticOut,
           decoration: BoxDecoration(
-            color: _color,
-            borderRadius: _borderRadius,
-          ),
+              color: _color,
+              borderRadius: _borderRadius,
+              border: Border.all(width: _border, color: _color2)),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -47,7 +50,11 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
     _height = random.nextInt(300).toDouble() + 70;
     _color = Color.fromRGBO(
         random.nextInt(255), random.nextInt(255), random.nextInt(255), 1);
+    _color2 = Color.fromRGBO(
+        random.nextInt(255), random.nextInt(255), random.nextInt(255), 1);
     _borderRadius = BorderRadius.circular(random.nextInt(100).toDouble() + 10);
+    _border = random.nextInt(20).toDouble();
+
     setState(() {});
   }
 }

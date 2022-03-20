@@ -72,6 +72,24 @@ class AppRoutes {
       screen: const ExpandedScreen(),
       icon: Icons.expand,
     ),
+    MenuOption(
+      route: 'wrap',
+      name: 'Wrap',
+      screen: const WrapScreen(),
+      icon: Icons.wrap_text,
+    ),
+    MenuOption(
+      route: 'opacity',
+      name: 'Opacity',
+      screen: const OpacityScreen(),
+      icon: Icons.opacity,
+    ),
+    MenuOption(
+      route: 'futurebuilder',
+      name: 'FutureBuilder',
+      screen: const FutureBuilderScreen(),
+      icon: Icons.build_rounded,
+    ),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
