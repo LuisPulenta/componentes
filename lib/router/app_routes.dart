@@ -90,6 +90,17 @@ class AppRoutes {
       screen: const FutureBuilderScreen(),
       icon: Icons.build_rounded,
     ),
+    MenuOption(
+      route: 'fadetransition',
+      name: 'FadeTransition',
+      screen: const FadeTransitionScreen(),
+      icon: Icons.transfer_within_a_station,
+    ),
+    MenuOption(
+        route: 'floatingactionbutton',
+        name: 'FloatingActionButton',
+        screen: const FloatingActionButtonScreen(),
+        icon: Icons.radio_button_on),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
