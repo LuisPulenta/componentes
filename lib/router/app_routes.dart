@@ -101,6 +101,16 @@ class AppRoutes {
         name: 'FloatingActionButton',
         screen: const FloatingActionButtonScreen(),
         icon: Icons.radio_button_on),
+    MenuOption(
+        route: 'pageview',
+        name: 'PageView',
+        screen: const PageViewScreen(),
+        icon: Icons.pageview),
+    MenuOption(
+        route: 'table',
+        name: 'Table',
+        screen: const TableScreen(),
+        icon: Icons.table_bar),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
