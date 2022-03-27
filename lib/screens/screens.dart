@@ -15,5 +15,7 @@ export 'package:componentes/screens/opacity_screen.dart';
 export 'package:componentes/screens/pageview_screen.dart';
 export 'package:componentes/screens/safe_area._screen.dart';
 export 'package:componentes/screens/slider_screen.dart';
+export 'package:componentes/screens/sliverappbar_screen.dart';
+export 'package:componentes/screens/sliverlist_screen.dart';
 export 'package:componentes/screens/table_screen.dart';
 export 'package:componentes/screens/wrap_screen.dart';

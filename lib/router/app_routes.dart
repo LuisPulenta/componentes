@@ -111,6 +111,16 @@ class AppRoutes {
         name: 'Table',
         screen: const TableScreen(),
         icon: Icons.table_bar),
+    MenuOption(
+        route: 'sliverappbar',
+        name: 'SliverAppBar',
+        screen: const SliverAppBarScreen(),
+        icon: Icons.menu),
+    MenuOption(
+        route: 'sliverlist',
+        name: 'SliverList',
+        screen: const SliverListScreen(),
+        icon: Icons.menu_book),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
