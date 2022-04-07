@@ -121,6 +121,26 @@ class AppRoutes {
         name: 'SliverList',
         screen: const SliverListScreen(),
         icon: Icons.menu_book),
+    MenuOption(
+        route: 'fadeinimage',
+        name: 'FadeInImage',
+        screen: const FadeInImageScreen(),
+        icon: Icons.image),
+    MenuOption(
+        route: 'streambuilder',
+        name: 'StreamBuilder',
+        screen: const StreamBuilderScreen(),
+        icon: Icons.stream),
+    MenuOption(
+        route: 'inheritedwidget',
+        name: 'InheritedWidget',
+        screen: const InheritedWidgetScreen(),
+        icon: Icons.widgets),
+    MenuOption(
+        route: 'cliprrect',
+        name: 'ClipRRect',
+        screen: const ClipRRectScreen(),
+        icon: Icons.stream),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
