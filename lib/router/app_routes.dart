@@ -141,6 +141,16 @@ class AppRoutes {
         name: 'ClipRRect',
         screen: const ClipRRectScreen(),
         icon: Icons.stream),
+    MenuOption(
+        route: 'hero',
+        name: 'Hero',
+        screen: const HeroScreen(),
+        icon: Icons.animation),
+    MenuOption(
+        route: 'custompainter',
+        name: 'CustomPainter',
+        screen: const CustomPainterScreen(),
+        icon: Icons.graphic_eq),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
