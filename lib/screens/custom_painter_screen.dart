@@ -46,14 +46,32 @@ class MiPainterPersonalizado extends CustomPainter {
     // path.lineTo(size.width, size.height);
     // path.lineTo(size.width, 0);
 
-    path.moveTo(size.width * 0.3333, 0);
-    path.lineTo(size.width * 0.3333, size.height);
-    path.moveTo(size.width * 0.6666, 0);
-    path.lineTo(size.width * 0.6666, size.height);
-    path.moveTo(0, size.height * 0.3333);
-    path.lineTo(size.width, size.height * 0.3333);
-    path.moveTo(0, size.height * 0.6666);
-    path.lineTo(size.width, size.height * 0.6666);
+    // path.moveTo(size.width * 0.3333, 0);
+    // path.lineTo(size.width * 0.3333, size.height);
+    // path.moveTo(size.width * 0.6666, 0);
+    // path.lineTo(size.width * 0.6666, size.height);
+    // path.moveTo(0, size.height * 0.3333);
+    // path.lineTo(size.width, size.height * 0.3333);
+    // path.moveTo(0, size.height * 0.6666);
+    // path.lineTo(size.width, size.height * 0.6666);
+
+    path.moveTo(size.width * 0.5, size.height * 0.18);
+    path.lineTo(size.width * 0.71, size.height * 0.82);
+    path.lineTo(size.width * 0.17, size.height * 0.43);
+    path.lineTo(size.width * 0.83, size.height * 0.43);
+    path.lineTo(size.width * 0.29, size.height * 0.82);
+    path.lineTo(size.width * 0.50, size.height * 0.18);
+
+    path.lineTo(size.width * 0.61, size.height * 0.37);
+    path.lineTo(size.width * 0.83, size.height * 0.43);
+    path.lineTo(size.width * 0.69, size.height * 0.60);
+    path.lineTo(size.width * 0.71, size.height * 0.82);
+    path.lineTo(size.width * 0.50, size.height * 0.73);
+    path.lineTo(size.width * 0.29, size.height * 0.82);
+    path.lineTo(size.width * 0.31, size.height * 0.60);
+    path.lineTo(size.width * 0.17, size.height * 0.43);
+    path.lineTo(size.width * 0.39, size.height * 0.37);
+    path.lineTo(size.width * 0.50, size.height * 0.18);
 
     canvas.drawPath(path, paint);
   }

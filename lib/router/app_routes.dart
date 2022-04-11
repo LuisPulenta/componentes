@@ -151,6 +151,24 @@ class AppRoutes {
         name: 'CustomPainter',
         screen: const CustomPainterScreen(),
         icon: Icons.graphic_eq),
+
+    MenuOption(
+        route: 'tooltip',
+        name: 'ToolTip',
+        screen: const ToolTipScreen(),
+        icon: Icons.tips_and_updates),
+
+    MenuOption(
+        route: 'fittedbox',
+        name: 'FittedBox',
+        screen: const FittedBoxScreen(),
+        icon: Icons.indeterminate_check_box_sharp),
+
+    MenuOption(
+        route: 'layoutbuilder',
+        name: 'LayoutBuilder',
+        screen: const LayoutBuilderScreen(),
+        icon: Icons.layers),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
