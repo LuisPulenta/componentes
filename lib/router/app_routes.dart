@@ -169,6 +169,54 @@ class AppRoutes {
         name: 'LayoutBuilder',
         screen: const LayoutBuilderScreen(),
         icon: Icons.layers),
+
+    MenuOption(
+        route: 'asorbpointer',
+        name: 'AbsorbPointer',
+        screen: const AbsorbPointerScreen(),
+        icon: Icons.arrow_circle_right),
+
+    MenuOption(
+        route: 'transform',
+        name: 'Transform',
+        screen: const TransformScreen(),
+        icon: Icons.transform),
+
+    MenuOption(
+        route: 'transform2',
+        name: 'Transform2',
+        screen: const Transform2Screen(),
+        icon: Icons.transform),
+
+    MenuOption(
+        route: 'imagefilter',
+        name: 'ImageFilter',
+        screen: const ImageFilterScreen(),
+        icon: Icons.filter),
+
+    MenuOption(
+        route: 'align',
+        name: 'Align',
+        screen: const AlignScreen(),
+        icon: Icons.align_horizontal_center),
+
+    MenuOption(
+        route: 'positioned',
+        name: 'Positioned',
+        screen: const PositionedScreen(),
+        icon: Icons.location_searching_outlined),
+
+    MenuOption(
+        route: 'animatedbuilder',
+        name: 'AnimatedBuilder',
+        screen: const AnimatedBuilderScreen(),
+        icon: Icons.animation),
+
+    MenuOption(
+        route: 'dismissible',
+        name: 'Dismissible',
+        screen: const DismissibleScreen(),
+        icon: Icons.move_up_sharp),
   ];
 
   // static Map<String, Widget Function(BuildContext)> routes = {
