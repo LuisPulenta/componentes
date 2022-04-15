@@ -20,6 +20,7 @@ class HomeScreen extends StatelessWidget {
             leading: Icon(
               menuOptions[index].icon,
               color: AppTheme.primary,
+              size: 40,
             ),
             title: Text(menuOptions[index].name),
             onTap: () {

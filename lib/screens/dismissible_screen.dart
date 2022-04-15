@@ -1,14 +1,101 @@
+import 'package:componentes/data/people.dart';
 import 'package:flutter/material.dart';
 
-class DismissibleScreen extends StatelessWidget {
-  const DismissibleScreen({Key? key}) : super(key: key);
+class DismissibleScreen extends StatefulWidget {
+  @override
+  State<DismissibleScreen> createState() => _DismissibleScreenState();
+}
+
+class _DismissibleScreenState extends State<DismissibleScreen> {
+  List<Map<String, dynamic>> contacts = [...people];
+
+  void onTooglePinned(int index) {
+    setState(() {
+      contacts[index]['pinned'] = !contacts[index]['pinned'];
+    });
+  }
+
+  void onDeleteContact(int index) {
+    setState(() {
+      contacts.removeAt(index);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('DismissibleScreen')),
-      body: Center(
-        child: Text('DismissibleScreen'),
+      appBar: AppBar(title: Text('Dismissible')),
+      body: ListView.separated(
+        itemCount: contacts.length,
+        separatorBuilder: (_, __) => Divider(
+          color: Colors.black26,
+          height: 2,
+        ),
+        itemBuilder: (_, int index) => ListItem(
+          contact: contacts[index],
+          index: index,
+          onDeleteContact: onDeleteContact,
+          onTooglePinned: onTooglePinned,
+        ),
+      ),
+    );
+  }
+}
+
+class ListItem extends StatelessWidget {
+  const ListItem(
+      {required this.contact,
+      required this.index,
+      required this.onTooglePinned,
+      required this.onDeleteContact});
+
+  final Map<String, dynamic> contact;
+  final int index;
+  final Function onTooglePinned;
+  final Function onDeleteContact;
+
+  @override
+  Widget build(BuildContext context) {
+    return Dismissible(
+      key: UniqueKey(),
+      background: Container(
+        color: Colors.red[400],
+        child: Icon(
+          Icons.delete_outline_rounded,
+          color: Colors.white,
+        ),
+        alignment: Alignment.centerLeft,
+        padding: EdgeInsets.only(left: 10),
+      ),
+      secondaryBackground: Container(
+        color: Colors.blue[400],
+        child: Icon(
+          Icons.push_pin_outlined,
+          color: Colors.white,
+        ),
+        alignment: Alignment.centerRight,
+        padding: EdgeInsets.only(right: 10),
+      ),
+      onDismissed: (direction) {
+        if (direction == DismissDirection.startToEnd) {
+          onDeleteContact(index);
+        }
+      },
+      confirmDismiss: (direction) async {
+        //Pinned o Toggle
+        if (direction == DismissDirection.endToStart) {
+          onTooglePinned(index);
+          return false;
+        }
+        return true;
+      },
+      child: ListTile(
+        leading: Icon(contact['pinned']
+            ? Icons.push_pin_outlined
+            : Icons.circle_outlined),
+        title: Text('${contact['first_name']} ${contact['last_name']}'),
+        subtitle: Text(contact['phone']),
+        //dense: true,
       ),
     );
   }

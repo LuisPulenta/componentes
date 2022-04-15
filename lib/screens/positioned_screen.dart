@@ -6,10 +6,69 @@ class PositionedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('PositionedScreen')),
+      appBar: AppBar(title: Text('Positioned')),
       body: Center(
-        child: Text('PositionedScreen'),
+        child: Container(
+          width: 350,
+          height: 550,
+          color: Colors.blue,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 10,
+                top: 10,
+                bottom: 10,
+                right: 10,
+                child: PinkBox(),
+              ),
+              Positioned(
+                left: 10,
+                top: 10,
+                bottom: 10,
+                child: GreenBox(),
+              ),
+              Positioned.fill(
+                top: 120,
+                left: 120,
+                child: YellowBox(),
+              ),
+            ],
+          ),
+        ),
       ),
+    );
+  }
+}
+
+class PinkBox extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 50,
+      height: 50,
+      color: Colors.pink,
+    );
+  }
+}
+
+class GreenBox extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 50,
+      height: 50,
+      color: Colors.green,
+    );
+  }
+}
+
+class YellowBox extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 50,
+      height: 50,
+      color: Colors.yellow,
     );
   }
 }
