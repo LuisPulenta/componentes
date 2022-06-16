@@ -1,5 +1,4 @@
 import 'package:componentes/models/miscolores.dart';
-import 'package:componentes/widgets/rectangulo.dart';
 import 'package:flutter/material.dart';
 
 class InheritedWidgetScreen extends StatelessWidget {
@@ -7,19 +6,21 @@ class InheritedWidgetScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MiPaginaInheritedWidget();
+    return const MiPaginaInheritedWidget();
   }
 }
 
 class MiPaginaInheritedWidget extends StatefulWidget {
+  const MiPaginaInheritedWidget({Key? key}) : super(key: key);
+
   @override
   State<MiPaginaInheritedWidget> createState() =>
       _MiPaginaInheritedWidgetState();
 }
 
 class _MiPaginaInheritedWidgetState extends State<MiPaginaInheritedWidget> {
-  Color color1 = Colors.redAccent;
-  Color color2 = Colors.teal;
+  Color color1 = Colors.blue;
+  Color color2 = Colors.red;
 
   @override
   Widget build(BuildContext context) {
@@ -27,21 +28,21 @@ class _MiPaginaInheritedWidgetState extends State<MiPaginaInheritedWidget> {
       color1,
       color2,
       child: Scaffold(
-        appBar: AppBar(title: Text('InheritedWidgetScreen')),
+        appBar: AppBar(title: const Text('InheritedWidgetScreen')),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
+            children: const [
               Rectangulo1(),
               Rectangulo2(),
             ],
           ),
         ),
         floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.color_lens),
+            child: const Icon(Icons.color_lens),
             onPressed: () {
-              color1 = Colors.pink;
-              color2 = Colors.yellow;
+              color1 = Colors.yellow;
+              color2 = Colors.green;
               setState(() {});
             }),
       ),
@@ -50,6 +51,8 @@ class _MiPaginaInheritedWidgetState extends State<MiPaginaInheritedWidget> {
 }
 
 class Rectangulo1 extends StatelessWidget {
+  const Rectangulo1({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final misColoresW =
@@ -66,6 +69,8 @@ class Rectangulo1 extends StatelessWidget {
 }
 
 class Rectangulo2 extends StatelessWidget {
+  const Rectangulo2({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final misColoresW =

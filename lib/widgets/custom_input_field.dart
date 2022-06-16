@@ -5,6 +5,7 @@ class CustomInputField extends StatelessWidget {
   final String? labelText;
   final String? helperText;
   final IconData? icon;
+  final IconData? prefixicon;
   final IconData? suffixicon;
   final TextInputType? keyboardType;
   final bool isPassword;
@@ -17,6 +18,7 @@ class CustomInputField extends StatelessWidget {
     this.labelText,
     this.helperText,
     this.icon,
+    this.prefixicon,
     this.suffixicon,
     this.keyboardType,
     this.isPassword = false,
@@ -45,8 +47,9 @@ class CustomInputField extends StatelessWidget {
         labelText: labelText,
         helperText: helperText,
         counterText: '3 caracteres',
-        suffixIcon: suffixicon == null ? null : Icon(suffixicon),
         icon: icon == null ? null : Icon(icon),
+        prefixIcon: prefixicon == null ? null : Icon(prefixicon),
+        suffixIcon: suffixicon == null ? null : Icon(suffixicon),
       ),
     );
   }

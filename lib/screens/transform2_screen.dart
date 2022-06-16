@@ -20,7 +20,7 @@ class _Transform2ScreenState extends State<Transform2Screen> {
         ..rotateY(_offset.dx * 0.01),
       alignment: FractionalOffset.center,
       child: GestureDetector(
-        child: _ScreenBody(),
+        child: const _ScreenBody(),
         onPanUpdate: (details) => setState(() => _offset += details.delta),
         onDoubleTap: () => setState(() => _offset = Offset.zero),
       ),
@@ -36,13 +36,13 @@ class _ScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Perspectiva')),
-      body: Center(
+      appBar: AppBar(title: const Text('Perspectiva')),
+      body: const Center(
         child: Text('Hola Mundo!!!'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.home),
+        child: const Icon(Icons.home),
       ),
     );
   }

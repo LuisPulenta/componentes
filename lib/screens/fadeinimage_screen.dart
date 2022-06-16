@@ -6,12 +6,13 @@ class FadeInImageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('FadeInImage')),
+      appBar: AppBar(title: const Text('FadeInImage')),
       body: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         itemCount: 80,
         itemBuilder: (BuildContext context, int index) {
           return FadeInImage(
-            placeholder: AssetImage('assets/loading.gif'),
+            placeholder: const AssetImage('assets/loading.gif'),
             image: NetworkImage('https://picsum.photos/id/$index/600/400'),
           );
         },

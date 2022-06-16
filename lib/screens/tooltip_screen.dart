@@ -6,7 +6,7 @@ class ToolTipScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('TooltipScreen')),
+      appBar: AppBar(title: const Text('TooltipScreen')),
       body: Center(
         child: Tooltip(
           message: 'Este es el mejor botón del mundo',
@@ -16,13 +16,13 @@ class ToolTipScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           child: OutlinedButton(
-            child: Text(
+            child: const Text(
               'Hola Mundo',
               style: TextStyle(fontSize: 30),
             ),
             onPressed: () {},
             style: OutlinedButton.styleFrom(
-              side: BorderSide(width: 2.0, color: Colors.blue),
+              side: const BorderSide(width: 2.0, color: Colors.blue),
               backgroundColor: Colors.teal[100],
             ),
           ),

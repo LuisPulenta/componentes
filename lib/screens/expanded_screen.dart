@@ -12,12 +12,12 @@ class ExpandedScreen extends StatelessWidget {
           children: const [
             Expanded(
               child: Cuadrado(color: Colors.red, lado: 60),
-              flex: 2,
+              flex: 1,
             ),
             Cuadrado(color: Colors.blue, lado: 60),
             Expanded(
               child: Cuadrado(color: Colors.green, lado: 60),
-              flex: 1,
+              flex: 4,
             ),
             Cuadrado(color: Colors.yellow, lado: 60),
           ],
@@ -36,7 +36,7 @@ class Cuadrado extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       width: lado,
       height: lado,
       color: color,

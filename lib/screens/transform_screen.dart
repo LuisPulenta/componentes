@@ -16,7 +16,7 @@ class _TransformScreenState extends State<TransformScreen>
   @override
   void initState() {
     animationCtrl =
-        AnimationController(duration: Duration(seconds: 1), vsync: this);
+        AnimationController(duration: const Duration(seconds: 1), vsync: this);
     scaleAnimation = Tween<double>(begin: 1, end: 1.5).animate(animationCtrl);
     translateAnimation = Tween<double>(begin: 0, end: 250).animate(
       CurvedAnimation(parent: animationCtrl, curve: Curves.bounceOut),
@@ -27,7 +27,7 @@ class _TransformScreenState extends State<TransformScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('TransformScreen')),
+      appBar: AppBar(title: const Text('TransformScreen')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -60,13 +60,13 @@ class _TransformScreenState extends State<TransformScreen>
               children: [
                 FloatingActionButton(
                     heroTag: "Uno",
-                    child: Icon(Icons.play_arrow),
+                    child: const Icon(Icons.play_arrow),
                     onPressed: () {
                       animationCtrl.forward();
                     }),
                 FloatingActionButton(
                     heroTag: "Dos",
-                    child: Icon(Icons.restore),
+                    child: const Icon(Icons.restore),
                     onPressed: () {
                       animationCtrl.reset();
                     })
@@ -85,8 +85,8 @@ class _Rectangulo extends StatelessWidget {
     return Container(
       width: 70,
       height: 70,
-      decoration: BoxDecoration(color: Colors.blue),
-      child: Icon(
+      decoration: const BoxDecoration(color: Colors.blue),
+      child: const Icon(
         Icons.home,
         size: 50,
         color: Colors.white,

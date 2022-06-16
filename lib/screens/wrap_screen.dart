@@ -6,13 +6,13 @@ class WrapScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Wrap')),
+      appBar: AppBar(title: const Text('Wrap')),
       body: Center(
         child: Wrap(
           alignment: WrapAlignment.spaceBetween,
           spacing: 30,
           direction: Axis.horizontal,
-          children: [
+          children: const [
             Tag('Azul', Colors.blue),
             Tag('Amarillo', Colors.yellow),
             Tag('Rojo', Colors.red),
@@ -32,14 +32,14 @@ class Tag extends StatelessWidget {
   final String texto;
   final Color color;
 
-  Tag(this.texto, this.color);
+  const Tag(this.texto, this.color, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Chip(
       label: Text(
         texto,
-        style: TextStyle(color: Colors.white),
+        style: const TextStyle(color: Colors.white),
       ),
       backgroundColor: color,
       avatar: CircleAvatar(

@@ -69,7 +69,7 @@ class AppRoutes {
     MenuOption(
         route: 'dismissible',
         name: 'Dismissible',
-        screen: DismissibleScreen(),
+        screen: const DismissibleScreen(),
         icon: Icons.move_up_sharp),
 
     MenuOption(

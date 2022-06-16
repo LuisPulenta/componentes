@@ -27,6 +27,8 @@ class MiPaginaSliverAppBar extends StatelessWidget {
     Colors.greenAccent,
     Colors.lightGreenAccent,
   ];
+
+  MiPaginaSliverAppBar({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final List<Widget> items = List.generate(
@@ -47,12 +49,12 @@ class MiPaginaSliverAppBar extends StatelessWidget {
 
     return Scaffold(
       body: CustomScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         slivers: [
           SliverAppBar(
             floating: false,
             pinned: true,
-            title: Text('SliverAppBar'),
+            title: const Text('SliverAppBar'),
             expandedHeight: 200,
             flexibleSpace: Image.network(
               'https://interiorfutbolero.com.ar/wp-content/uploads/2022/03/Talleres-a-16avos-de-final.jpg',

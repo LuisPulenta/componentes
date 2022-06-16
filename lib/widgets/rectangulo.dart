@@ -9,7 +9,7 @@ class Rectangulo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedOpacity(
-      duration: Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 600),
       curve: Curves.easeOut,
       opacity: opacity,
       child: Container(

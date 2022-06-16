@@ -29,11 +29,12 @@ class _SliderScreenState extends State<SliderScreen> {
                     setState(() {});
                   }
                 : null,
-            divisions: 400,
+            divisions: 100,
           ),
           Center(child: Text(_sliderValue.toString())),
           Checkbox(
               value: _sliderEnabled,
+              activeColor: AppTheme.primary,
               onChanged: (value) {
                 _sliderEnabled = value!;
                 setState(() {});
@@ -63,6 +64,7 @@ class _SliderScreenState extends State<SliderScreen> {
           const AboutListTile(),
           Expanded(
             child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               child: Image(
                 image: const NetworkImage(
                     'https://d3ekkp2oigezer.cloudfront.net/business/531/products/p6MXZD_5ee53d4617b55_medium.png'),
@@ -70,7 +72,10 @@ class _SliderScreenState extends State<SliderScreen> {
                 width: _sliderValue,
               ),
             ),
-          )
+          ),
+          const SizedBox(
+            height: 100,
+          ),
         ],
       ),
     );

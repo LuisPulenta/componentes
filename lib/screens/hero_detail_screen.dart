@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class HeroDetailScreen extends StatelessWidget {
   const HeroDetailScreen({Key? key}) : super(key: key);
@@ -7,9 +6,9 @@ class HeroDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Hero Detail')),
+      appBar: AppBar(title: const Text('Hero Detail')),
       body: Column(
-        children: [
+        children: const [
           Hero(
             tag: "Luis",
             child: FlutterLogo(

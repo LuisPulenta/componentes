@@ -6,35 +6,39 @@ class TableScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('TableScreen')),
+        appBar: AppBar(title: const Text('TableScreen')),
         body: Center(
             child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Table(
-            defaultVerticalAlignment: TableCellVerticalAlignment.bottom,
+            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
             //defaultColumnWidth: FixedColumnWidth(100),
-            columnWidths: {
-              0: FractionColumnWidth(0.5),
-              1: FractionColumnWidth(0.3),
-              2: FractionColumnWidth(0.2),
+            columnWidths: const {
+              0: FractionColumnWidth(0.6),
+              1: FractionColumnWidth(0.2),
+              2: FractionColumnWidth(0.1),
+              3: FractionColumnWidth(0.1),
             },
             border: TableBorder.all(),
-            children: [
+            children: const [
               TableRow(children: [
                 RectanguloLarge(),
                 RectanguloMedium(),
                 RectanguloSmall(),
+                RectanguloMedium(),
               ]),
               TableRow(children: [
                 RectanguloMedium(),
                 RectanguloLarge(),
                 RectanguloSmall(),
+                RectanguloLarge(),
               ]),
               TableRow(children: [
                 RectanguloSmall(),
                 RectanguloMedium(),
                 RectanguloLarge(),
-              ])
+                RectanguloSmall(),
+              ]),
             ],
           ),
         )));
@@ -42,13 +46,15 @@ class TableScreen extends StatelessWidget {
 }
 
 class RectanguloLarge extends StatelessWidget {
+  const RectanguloLarge({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 70,
       height: 200,
-      margin: EdgeInsets.all(5),
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.all(5),
+      decoration: const BoxDecoration(
         color: Colors.blue,
       ),
     );
@@ -56,13 +62,15 @@ class RectanguloLarge extends StatelessWidget {
 }
 
 class RectanguloMedium extends StatelessWidget {
+  const RectanguloMedium({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 70,
       height: 150,
-      margin: EdgeInsets.all(5),
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.all(5),
+      decoration: const BoxDecoration(
         color: Colors.teal,
       ),
     );
@@ -70,13 +78,15 @@ class RectanguloMedium extends StatelessWidget {
 }
 
 class RectanguloSmall extends StatelessWidget {
+  const RectanguloSmall({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 70,
       height: 100,
-      margin: EdgeInsets.all(5),
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.all(5),
+      decoration: const BoxDecoration(
         color: Colors.yellow,
       ),
     );

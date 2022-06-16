@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 
 class FloatingActionButtonScreen extends StatelessWidget {
   const FloatingActionButtonScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MiPaginaA();
+    return const MiPaginaA();
   }
 }
 
@@ -18,22 +17,24 @@ class MiPaginaA extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Pagina A')),
-      body: Center(
+      appBar: AppBar(title: const Text('Pagina A')),
+      body: const Center(
         child: Text('FloatingActionButtonScreen'),
       ),
-      floatingActionButton: BotonFlotante(),
-      bottomNavigationBar: BarraNavegacion(),
+      floatingActionButton: const BotonFlotante(),
+      bottomNavigationBar: const BarraNavegacion(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
 
 class BarraNavegacion extends StatelessWidget {
+  const BarraNavegacion({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: [
+      items: const [
         BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Buscar'),
         BottomNavigationBarItem(icon: Icon(Icons.security), label: 'Ajustes'),
       ],
@@ -55,10 +56,11 @@ class BotonFlotante extends StatelessWidget {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (BuildContext context) => MiPaginaB()),
+          MaterialPageRoute(
+              builder: (BuildContext context) => const MiPaginaB()),
         );
       },
-      child: Icon(Icons.add),
+      child: const Icon(Icons.add),
     );
   }
 }
@@ -69,9 +71,9 @@ class MiPaginaB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Pagina B')),
-      floatingActionButton: BotonFlotante(),
-      bottomNavigationBar: BarraNavegacion(),
+      appBar: AppBar(title: const Text('Pagina B')),
+      floatingActionButton: const BotonFlotante(),
+      bottomNavigationBar: const BarraNavegacion(),
       floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
     );
   }

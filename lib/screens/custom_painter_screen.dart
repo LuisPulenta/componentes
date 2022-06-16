@@ -5,21 +5,24 @@ class CustomPainterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MiPaginaCustomPainter();
+    return const MiPaginaCustomPainter();
   }
 }
 
 class MiPaginaCustomPainter extends StatelessWidget {
+  const MiPaginaCustomPainter({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('CustomPainterScreen')),
+      appBar: AppBar(title: const Text('CustomPainterScreen')),
       body: Center(
         child: Container(
-          height: 260,
-          width: 260,
+          height: 360,
+          width: 360,
           color: Colors.black12,
           child: CustomPaint(
+            size: const Size(40, 40),
             painter: MiPainterPersonalizado(),
           ),
         ),
@@ -32,8 +35,8 @@ class MiPainterPersonalizado extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Color(0xff21232a)
-      ..strokeWidth = 5
+      ..color = Colors.red
+      ..strokeWidth = 2
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
 

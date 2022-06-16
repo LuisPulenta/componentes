@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class MisColoresW extends InheritedWidget {
-  MisColoresW(this.color1, this.color2, {Key? key, required this.child})
+  const MisColoresW(this.color1, this.color2, {Key? key, required this.child})
       : super(key: key, child: child);
 
+  @override
+  // ignore: overridden_fields
   final Widget child;
   final Color color1;
   final Color color2;

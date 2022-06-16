@@ -8,7 +8,7 @@ class FutureBuilderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MiPagina2();
+    return const MiPagina2();
   }
 }
 
@@ -20,16 +20,18 @@ Future<ReqReRespuesta> getUsuarios() async {
 }
 
 class MiPagina2 extends StatelessWidget {
+  const MiPagina2({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Future Builder')),
+        appBar: AppBar(title: const Text('Future Builder')),
         body: FutureBuilder(
           future: getUsuarios(),
           builder:
               (BuildContext context, AsyncSnapshot<ReqReRespuesta> snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             } else {
               return _ListaUsuarios(
                 usuarios: snapshot.data?.data,
@@ -55,11 +57,12 @@ class _ListaUsuarios extends StatelessWidget {
       itemBuilder: (BuildContext context, int i) {
         final usuario = usuarios?[i];
         return FadeInLeft(
-          delay: Duration(milliseconds: 100 * i),
+          delay: Duration(milliseconds: 500 * i + 500),
           child: ListTile(
             title: Text('${usuario!.firstName} ${usuario.lastName}'),
             subtitle: Text(usuario.email),
             trailing: Image.network(usuario.avatar),
+            leading: Image.network(usuario.avatar),
           ),
         );
       },

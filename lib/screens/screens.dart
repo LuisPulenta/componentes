@@ -2,7 +2,7 @@ export 'package:componentes/screens/alert_screen.dart';
 export 'package:componentes/screens/align_screen.dart';
 export 'package:componentes/screens/animated_screen.dart';
 export 'package:componentes/screens/animatedbuilder_screen.dart';
-export 'package:componentes/screens/asorbpointer_screen.dart';
+export 'package:componentes/screens/absorbpointer_screen.dart';
 export 'package:componentes/screens/avatar_screen.dart';
 export 'package:componentes/screens/card_screen.dart';
 export 'package:componentes/screens/cliprrect_screen.dart';

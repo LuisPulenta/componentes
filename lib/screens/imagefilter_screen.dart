@@ -8,7 +8,7 @@ class ImageFilterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('ImagefilterScreen')),
+      appBar: AppBar(title: const Text('ImagefilterScreen')),
       body: Stack(children: [
         Center(
             child: Image.network(
@@ -21,7 +21,9 @@ class ImageFilterScreen extends StatelessWidget {
           child: ClipRect(
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-              child: Container(),
+              child: Container(
+                color: Colors.red.withOpacity(0.5),
+              ),
             ),
           ),
         ),

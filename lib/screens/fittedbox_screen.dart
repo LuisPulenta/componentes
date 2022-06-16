@@ -6,7 +6,7 @@ class FittedBoxScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('FittedboxScreen')),
+      appBar: AppBar(title: const Text('FittedboxScreen')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -15,19 +15,20 @@ class FittedBoxScreen extends StatelessWidget {
               width: 300,
               height: 300,
               color: Colors.blue,
-              child: FittedBox(
+              child: const FittedBox(
                 alignment: Alignment.topCenter,
+                fit: BoxFit.contain,
                 child: Image(
                   image: NetworkImage(
                       'https://static.misionesonline.news/wp-content/uploads/2019/09/leopard-in-botswana-Small-14uk9s4dfdro.jpg'),
                 ),
               ),
             ),
-            Divider(),
-            // Image(
-            //   image: NetworkImage(
-            //       'https://static.misionesonline.news/wp-content/uploads/2019/09/leopard-in-botswana-Small-14uk9s4dfdro.jpg'),
-            // )
+            const Divider(),
+            const Image(
+              image: NetworkImage(
+                  'https://static.misionesonline.news/wp-content/uploads/2019/09/leopard-in-botswana-Small-14uk9s4dfdro.jpg'),
+            )
           ],
         ),
       ),

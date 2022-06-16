@@ -7,10 +7,10 @@ class HeroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Hero Animation')),
+      appBar: AppBar(title: const Text('Hero Animation')),
       body: Table(
         children: [
-          TableRow(children: [
+          const TableRow(children: [
             Placeholder(
               fallbackHeight: 150,
             ),
@@ -21,7 +21,7 @@ class HeroScreen extends StatelessWidget {
               fallbackHeight: 150,
             ),
           ]),
-          TableRow(children: [
+          const TableRow(children: [
             Placeholder(
               fallbackHeight: 150,
             ),
@@ -34,7 +34,7 @@ class HeroScreen extends StatelessWidget {
           ]),
           TableRow(children: [
             GestureDetector(
-              child: Hero(
+              child: const Hero(
                 tag: "Luis",
                 child: FlutterLogo(
                   size: 150,
@@ -42,18 +42,18 @@ class HeroScreen extends StatelessWidget {
               ),
               onTap: () => pushRoute(context),
             ),
-            Placeholder(
+            const Placeholder(
               fallbackHeight: 150,
             ),
-            Placeholder(
+            const Placeholder(
               fallbackHeight: 150,
             ),
           ]),
           TableRow(children: [
-            Placeholder(
+            const Placeholder(
               fallbackHeight: 150,
             ),
-            Placeholder(
+            const Placeholder(
               fallbackHeight: 150,
             ),
             Container(),
@@ -67,7 +67,7 @@ class HeroScreen extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (BuildContext context) => HeroDetailScreen(),
+        builder: (BuildContext context) => const HeroDetailScreen(),
       ),
     );
   }

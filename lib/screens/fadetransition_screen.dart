@@ -16,34 +16,34 @@ class _FadeTransitionScreenState extends State<FadeTransitionScreen>
   @override
   void initState() {
     super.initState();
-    controller = new AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1500));
-    opacidad = new Tween(begin: 0.0, end: 1.0).animate(controller);
+    controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 4500));
+    opacidad = Tween(begin: 0.0, end: 1.0).animate(controller);
     controller.forward();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('FadeTransitionScreen')),
+      appBar: AppBar(title: const Text('FadeTransitionScreen')),
       body: Container(
         alignment: Alignment.center,
         width: double.infinity,
         height: double.infinity,
         color: Colors.white70,
         child: Wrap(direction: Axis.vertical, spacing: 50, children: [
-          Rectangulo(
+          const Rectangulo(
             color: Colors.red,
             opacity: 1,
           ),
           FadeTransition(
             opacity: opacidad,
-            child: Rectangulo(
+            child: const Rectangulo(
               color: Colors.blue,
               opacity: 1,
             ),
           ),
-          Rectangulo(
+          const Rectangulo(
             color: Colors.yellow,
             opacity: 1,
           ),
@@ -51,9 +51,9 @@ class _FadeTransitionScreenState extends State<FadeTransitionScreen>
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          controller.forward(from: 0.0);
+          controller.forward(from: 0.3);
         },
-        child: Icon(Icons.access_alarm),
+        child: const Icon(Icons.access_alarm),
       ),
     );
   }

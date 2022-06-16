@@ -2,26 +2,33 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static const Color primary = Colors.indigo;
+  static const Color secondary = Colors.yellow;
+
+//*************** LIGHT THEME ********************************
 
   static final ThemeData lightTheme = ThemeData.light().copyWith(
     //Color primario
     primaryColor: primary,
+
     //AppBar Theme
     appBarTheme: const AppBarTheme(
       color: primary,
       elevation: 0,
       centerTitle: true,
     ),
+
     //TextButtonTheme
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(primary: primary),
     ),
+
     //FloatingActionButton
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: primary,
       foregroundColor: Colors.white,
       elevation: 0,
     ),
+
     //ElevatedButtons
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -31,8 +38,10 @@ class AppTheme {
         //minimumSize: Size(170, 50),
       ),
     ),
+
+    //InputDecorationTheme
     inputDecorationTheme: const InputDecorationTheme(
-      floatingLabelStyle: TextStyle(color: primary),
+      floatingLabelStyle: TextStyle(color: secondary, backgroundColor: primary),
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(color: primary),
         borderRadius: BorderRadius.only(
@@ -48,6 +57,7 @@ class AppTheme {
         ),
       ),
       border: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.grey),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(10),
           topRight: Radius.circular(10),
@@ -56,6 +66,7 @@ class AppTheme {
     ),
   );
 
+  //*************** DARK THEME ********************************
   static final ThemeData darkTheme = ThemeData.dark().copyWith(
       //Color primario
       primaryColor: primary,

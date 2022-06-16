@@ -59,7 +59,7 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
             isLoading
                 ? Positioned(
                     child: const LoadingIcon(),
-                    bottom: 40,
+                    bottom: size.height / 2,
                     left: size.width / 2 - 30,
                   )
                 : Container(),

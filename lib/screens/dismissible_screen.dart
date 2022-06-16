@@ -2,6 +2,8 @@ import 'package:componentes/data/people.dart';
 import 'package:flutter/material.dart';
 
 class DismissibleScreen extends StatefulWidget {
+  const DismissibleScreen({Key? key}) : super(key: key);
+
   @override
   State<DismissibleScreen> createState() => _DismissibleScreenState();
 }
@@ -24,10 +26,10 @@ class _DismissibleScreenState extends State<DismissibleScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Dismissible')),
+      appBar: AppBar(title: const Text('Dismissible')),
       body: ListView.separated(
         itemCount: contacts.length,
-        separatorBuilder: (_, __) => Divider(
+        separatorBuilder: (_, __) => const Divider(
           color: Colors.black26,
           height: 2,
         ),
@@ -44,10 +46,12 @@ class _DismissibleScreenState extends State<DismissibleScreen> {
 
 class ListItem extends StatelessWidget {
   const ListItem(
-      {required this.contact,
+      {Key? key,
+      required this.contact,
       required this.index,
       required this.onTooglePinned,
-      required this.onDeleteContact});
+      required this.onDeleteContact})
+      : super(key: key);
 
   final Map<String, dynamic> contact;
   final int index;
@@ -60,21 +64,21 @@ class ListItem extends StatelessWidget {
       key: UniqueKey(),
       background: Container(
         color: Colors.red[400],
-        child: Icon(
+        child: const Icon(
           Icons.delete_outline_rounded,
           color: Colors.white,
         ),
         alignment: Alignment.centerLeft,
-        padding: EdgeInsets.only(left: 10),
+        padding: const EdgeInsets.only(left: 10),
       ),
       secondaryBackground: Container(
         color: Colors.blue[400],
-        child: Icon(
+        child: const Icon(
           Icons.push_pin_outlined,
           color: Colors.white,
         ),
         alignment: Alignment.centerRight,
-        padding: EdgeInsets.only(right: 10),
+        padding: const EdgeInsets.only(right: 10),
       ),
       onDismissed: (direction) {
         if (direction == DismissDirection.startToEnd) {

@@ -6,16 +6,16 @@ class PageViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('PageViewScreen')),
+        appBar: AppBar(title: const Text('PageViewScreen')),
         body: Center(
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: 300,
             child: PageView(
               controller: PageController(viewportFraction: 0.5),
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
-              children: [
+              children: const [
                 Pagina(
                   color: Colors.blue,
                 ),
@@ -45,7 +45,7 @@ class Pagina extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      margin: EdgeInsets.only(left: 10),
+      margin: const EdgeInsets.only(left: 10),
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(30),

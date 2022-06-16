@@ -6,14 +6,14 @@ class AlignScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Align')),
+      appBar: AppBar(title: const Text('Align')),
       body: Center(
         child: Container(
           width: 300,
           height: 300,
           decoration: containerBorder(),
           child: Stack(
-            children: [
+            children: const [
               Align(
                 alignment: Alignment.bottomLeft,
                 //alignment: Alignment(-0.5, -0.5),
@@ -141,7 +141,7 @@ class BlueBox extends StatelessWidget {
 
 class CustomBox extends StatelessWidget {
   final Color color;
-  const CustomBox({this.color = Colors.blue});
+  const CustomBox({Key? key, this.color = Colors.blue}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

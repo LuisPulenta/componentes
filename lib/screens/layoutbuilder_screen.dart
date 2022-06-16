@@ -6,7 +6,7 @@ class LayoutBuilderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('LayoutBuilderScreen')),
+      appBar: AppBar(title: const Text('LayoutBuilderScreen')),
       body: SafeArea(
         child: ColumnasContenido(),
       ),
@@ -15,20 +15,22 @@ class LayoutBuilderScreen extends StatelessWidget {
 }
 
 class ColumnasContenido extends StatelessWidget {
-  @override
   final children = [
-    Expanded(
+    const Expanded(
       child: _Rectangulo(
         color: Colors.red,
       ),
     ),
-    Expanded(
+    const Expanded(
       child: _Rectangulo(
         color: Colors.blue,
       ),
     ),
   ];
 
+  ColumnasContenido({Key? key}) : super(key: key);
+
+  @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
@@ -51,7 +53,7 @@ class _Rectangulo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       width: double.infinity,
       height: 150,
       decoration: BoxDecoration(

@@ -7,7 +7,7 @@ class SliverListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MiPaginaSliverList();
+    return const MiPaginaSliverList();
   }
 }
 
@@ -18,19 +18,37 @@ class MiPaginaSliverList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget> items = List.generate(100, (i) => Rectangulo(i));
+    final List<Widget> items = List.generate(20, (i) => Rectangulo(i));
     return Scaffold(
       //appBar: AppBar(title: Text('SliverList y SLiverGrid')),
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
+          const SliverAppBar(
             title: Text('SliverGrid'),
+            pinned: true,
           ),
           SliverGrid.count(
             crossAxisCount: 5,
             children: items,
           ),
-          SliverAppBar(
+          const SliverAppBar(
+            title: Text('SliverList'),
+            pinned: true,
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate((context, i) {
+              return items[i];
+            }, childCount: items.length),
+          ),
+          const SliverAppBar(
+            title: Text('SliverGrid'),
+            pinned: true,
+          ),
+          SliverGrid.count(
+            crossAxisCount: 5,
+            children: items,
+          ),
+          const SliverAppBar(
             title: Text('SliverList'),
             pinned: true,
           ),
@@ -48,9 +66,10 @@ class MiPaginaSliverList extends StatelessWidget {
 class Rectangulo extends StatelessWidget {
   final int index;
 
-  const Rectangulo(this.index);
+  const Rectangulo(this.index, {Key? key}) : super(key: key);
+  @override
   Widget build(BuildContext context) {
-    final rnd = new Random();
+    final rnd = Random();
     final r = rnd.nextInt(255);
     final g = rnd.nextInt(255);
     final b = rnd.nextInt(255);
@@ -64,7 +83,7 @@ class Rectangulo extends StatelessWidget {
       child: Center(
         child: Text(
           '$index',
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
       ),
     );

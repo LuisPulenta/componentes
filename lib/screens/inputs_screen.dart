@@ -30,6 +30,9 @@ class InputScreen extends StatelessWidget {
                     hintText: "Nombre del Usuario",
                     formProperty: 'first-name',
                     formValues: formValues,
+                    icon: Icons.person,
+                    prefixicon: Icons.home,
+                    suffixicon: Icons.person_add_alt_outlined,
                   ),
                   const SizedBox(
                     height: 30,

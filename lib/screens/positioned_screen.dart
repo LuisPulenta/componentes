@@ -6,14 +6,14 @@ class PositionedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Positioned')),
+      appBar: AppBar(title: const Text('Positioned')),
       body: Center(
         child: Container(
           width: 350,
           height: 550,
           color: Colors.blue,
           child: Stack(
-            children: [
+            children: const [
               Positioned(
                 left: 10,
                 top: 10,
@@ -41,6 +41,8 @@ class PositionedScreen extends StatelessWidget {
 }
 
 class PinkBox extends StatelessWidget {
+  const PinkBox({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,6 +54,8 @@ class PinkBox extends StatelessWidget {
 }
 
 class GreenBox extends StatelessWidget {
+  const GreenBox({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,6 +67,8 @@ class GreenBox extends StatelessWidget {
 }
 
 class YellowBox extends StatelessWidget {
+  const YellowBox({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(

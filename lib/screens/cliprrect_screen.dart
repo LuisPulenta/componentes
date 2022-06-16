@@ -5,7 +5,7 @@ class ClipRRectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MiPaginaClipRRect();
+    return const MiPaginaClipRRect();
   }
 }
 
@@ -17,14 +17,14 @@ class MiPaginaClipRRect extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('ClipRRectScreen')),
+      appBar: AppBar(title: const Text('ClipRRectScreen')),
       body: Column(
         children: [
           Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.all(30),
+            padding: const EdgeInsets.all(30),
             height: 200,
-            child: ClipRRect(
+            child: const ClipRRect(
               //borderRadius: BorderRadius.circular(50),
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50)),
               child: Image(
@@ -33,29 +33,29 @@ class MiPaginaClipRRect extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.all(30),
+            padding: const EdgeInsets.all(30),
             height: 200,
-            child: ClipOval(
+            child: const ClipOval(
               child: Image(
                   image: NetworkImage(
                       'https://media.ambito.com/p/d111e168ea4b107af687a4e5b8cb30eb/adjuntos/239/imagenes/039/716/0039716539/talleres.jpg')),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.all(30),
+            padding: const EdgeInsets.all(30),
             height: 200,
             child: ClipPath(
               clipper: MyCustomClipper(),
-              child: Image(
+              child: const Image(
                   image: NetworkImage(
                       'https://media.ambito.com/p/d111e168ea4b107af687a4e5b8cb30eb/adjuntos/239/imagenes/039/716/0039716539/talleres.jpg')),
             ),
