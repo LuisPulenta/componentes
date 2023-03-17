@@ -340,13 +340,13 @@ final List<Map<String, dynamic>> people = [
     "first_name": "Tamas",
     "last_name": "Strangwood",
     "phone": "+52 (502) 488-8391",
-    "pinned": true
+    "pinned": false
   },
   {
     "id": 50,
-    "first_name": "Agatha",
-    "last_name": "Iacobetto",
-    "phone": "+81 (685) 827-5172",
-    "pinned": false
+    "first_name": "Luis",
+    "last_name": "Núñez",
+    "phone": "+54 (351) 681-4963",
+    "pinned": true
   }
 ];

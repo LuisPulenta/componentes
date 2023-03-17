@@ -11,7 +11,7 @@ class AlertScreen extends StatelessWidget {
       appBar: AppBar(title: const Text("Alert Widget")),
       body: Center(
         child: ElevatedButton(
-          onPressed: () => !Platform.isAndroid
+          onPressed: () => Platform.isAndroid
               ? displayDialogAndroid(context)
               : displayDialogIOS(context),
           child: const Padding(
@@ -45,9 +45,9 @@ class AlertScreen extends StatelessWidget {
             content: Column(
               mainAxisSize: MainAxisSize.min,
               children: const [
-                Text("Este es el contenido del Alerta"),
+                Text("Este es el contenido de la Alerta"),
                 SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
                 FlutterLogo(
                   size: 100,
@@ -61,7 +61,7 @@ class AlertScreen extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text("NO"),
+                child: const Text("NO", style: TextStyle(color: Colors.red)),
               ),
               TextButton(
                 onPressed: () => Navigator.pop(context),

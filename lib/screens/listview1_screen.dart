@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
 class ListView1Screen extends StatelessWidget {
-  final options = const ['Talleres', 'Belgrano', 'River Plate', 'Boca Juniors'];
+  final options = const [
+    'Talleres',
+    'Belgrano',
+    'River Plate',
+    'Boca Juniors',
+    'Independiente',
+    'Racing',
+    'Belgrano',
+    'Instituto',
+  ];
 
   const ListView1Screen({Key? key}) : super(key: key);
 
@@ -17,6 +26,7 @@ class ListView1Screen extends StatelessWidget {
               .map((team) => ListTile(
                     title: Text(team),
                     trailing: const Icon(Icons.arrow_forward_ios_outlined),
+                    leading: const Icon(Icons.home),
                   ))
               .toList(),
           const Divider(

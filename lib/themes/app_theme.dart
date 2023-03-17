@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static const Color primary = Colors.indigo;
+  static const Color primary = Color.fromARGB(255, 82, 186, 255);
   static const Color secondary = Colors.yellow;
 
 //*************** LIGHT THEME ********************************
@@ -41,7 +41,7 @@ class AppTheme {
 
     //InputDecorationTheme
     inputDecorationTheme: const InputDecorationTheme(
-      floatingLabelStyle: TextStyle(color: secondary, backgroundColor: primary),
+      floatingLabelStyle: TextStyle(color: primary, backgroundColor: secondary),
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(color: primary),
         borderRadius: BorderRadius.only(

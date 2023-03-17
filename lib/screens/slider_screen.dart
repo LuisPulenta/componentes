@@ -74,7 +74,7 @@ class _SliderScreenState extends State<SliderScreen> {
             ),
           ),
           const SizedBox(
-            height: 100,
+            height: 20,
           ),
         ],
       ),

@@ -28,6 +28,14 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
           width: _width,
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeOutCubic,
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Center(
+                child: Text(_width.toString() + " x " + _height.toString(),
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold))),
+          ]),
           decoration: BoxDecoration(
               color: _color,
               borderRadius: _borderRadius,

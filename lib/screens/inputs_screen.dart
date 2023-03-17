@@ -74,11 +74,19 @@ class InputScreen extends StatelessWidget {
                       ),
                       DropdownMenuItem(
                         value: 'Superuser',
-                        child: Text('Superuser'),
+                        child: Text('Superuser',
+                            style: TextStyle(
+                                color: Colors.blue,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold)),
                       ),
                       DropdownMenuItem(
                         value: 'Developer',
-                        child: Text('Developer'),
+                        child: Text('Developer',
+                            style: TextStyle(
+                                color: Colors.red,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold)),
                       ),
                       DropdownMenuItem(
                         value: 'User',

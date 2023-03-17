@@ -9,19 +9,15 @@ class DismissibleScreen extends StatefulWidget {
 }
 
 class _DismissibleScreenState extends State<DismissibleScreen> {
+//-------------------------------------------------------------------
+//---------------------- Inicialización de variables  ---------------
+//-------------------------------------------------------------------
+
   List<Map<String, dynamic>> contacts = [...people];
 
-  void onTooglePinned(int index) {
-    setState(() {
-      contacts[index]['pinned'] = !contacts[index]['pinned'];
-    });
-  }
-
-  void onDeleteContact(int index) {
-    setState(() {
-      contacts.removeAt(index);
-    });
-  }
+//-------------------------------------------------------------------
+//---------------------- Pantalla -----------------------------------
+//-------------------------------------------------------------------
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +38,33 @@ class _DismissibleScreenState extends State<DismissibleScreen> {
       ),
     );
   }
+
+//-------------------------------------------------------------------
+//---------------------- onTooglePinned -----------------------------
+//-------------------------------------------------------------------
+
+  void onTooglePinned(int index) {
+    setState(() {
+      contacts[index]['pinned'] = !contacts[index]['pinned'];
+    });
+  }
+
+//-------------------------------------------------------------------
+//---------------------- onDeleteContact ----------------------------
+//-------------------------------------------------------------------
+
+  void onDeleteContact(int index) {
+    setState(() {
+      contacts.removeAt(index);
+    });
+  }
 }
 
+// ****************************** FIN DE LA CLASE *******************
+
+//-------------------------------------------------------------------
+//---------------------- class ListItem -----------------------------
+//-------------------------------------------------------------------
 class ListItem extends StatelessWidget {
   const ListItem(
       {Key? key,

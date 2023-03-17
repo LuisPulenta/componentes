@@ -9,6 +9,7 @@ class CardScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("Card Widget")),
       body: ListView(
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
         children: const [
           CustomCardType1(),
@@ -46,6 +47,7 @@ class CardScreen extends StatelessWidget {
           SizedBox(
             height: 100,
           ),
+          CustomCardType1(),
         ],
       ),
     );
