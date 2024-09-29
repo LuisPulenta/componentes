@@ -1,4 +1,5 @@
 import 'package:componentes/router/app_routes.dart';
+import 'package:componentes/screens/card_screen.dart';
 import 'package:componentes/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -25,12 +26,8 @@ class HomeScreen extends StatelessWidget {
             title: Text(menuOptions[index].name),
             onTap: () {
               Navigator.pushNamed(context, menuOptions[index].route);
+              //Navigator.push(context, MaterialPageRoute(builder: (context) => const CardScreen()));
             },
-
-            // final route = MaterialPageRoute(
-            //   builder: (context) => const ListView1Screen(),
-            // );
-            // Navigator.push(context, route);
           ),
           separatorBuilder: (_, __) => const Divider(),
         ));

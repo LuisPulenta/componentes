@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static const Color primary = Color.fromARGB(255, 82, 186, 255);
+  static const Color primary = Color.fromARGB(255, 15, 78, 5);
   static const Color secondary = Colors.yellow;
 
 //*************** LIGHT THEME ********************************
@@ -19,7 +19,7 @@ class AppTheme {
 
     //TextButtonTheme
     textButtonTheme: TextButtonThemeData(
-      style: TextButton.styleFrom(primary: primary),
+      style: TextButton.styleFrom(foregroundColor: primary),
     ),
 
     //FloatingActionButton
@@ -32,7 +32,7 @@ class AppTheme {
     //ElevatedButtons
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        primary: primary,
+        backgroundColor: primary,
         shape: const StadiumBorder(),
         elevation: 0,
         //minimumSize: Size(170, 50),

@@ -20,7 +20,19 @@ class ListView1Screen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("ListView Tipo 1"),
       ),
-      body: ListView(
+      body:
+
+          //  ListView(
+          //   children: options.map((team) {
+          //     return ListTile(
+          //       title: Text(team),
+          //       trailing: const Icon(Icons.arrow_forward_ios_outlined),
+          //       leading: const Icon(Icons.home),
+          //     );
+          //   }).toList(),
+          // ),
+
+          ListView(
         children: <Widget>[
           ...options
               .map((team) => ListTile(
@@ -31,6 +43,7 @@ class ListView1Screen extends StatelessWidget {
               .toList(),
           const Divider(
             color: Colors.purple,
+            height: 5,
           ),
         ],
       ),

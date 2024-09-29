@@ -35,7 +35,7 @@ class InputScreen extends StatelessWidget {
                     suffixicon: Icons.person_add_alt_outlined,
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 10,
                   ),
                   CustomInputField(
                     labelText: "Apellido",
@@ -44,7 +44,7 @@ class InputScreen extends StatelessWidget {
                     formValues: formValues,
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 10,
                   ),
                   CustomInputField(
                     labelText: "Correo",
@@ -54,7 +54,7 @@ class InputScreen extends StatelessWidget {
                     formValues: formValues,
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 10,
                   ),
                   CustomInputField(
                     labelText: "Contraseña",
@@ -64,9 +64,14 @@ class InputScreen extends StatelessWidget {
                     isPassword: true,
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 10,
                   ),
                   DropdownButtonFormField<String>(
+                    isDense: true,
+                    decoration: const InputDecoration(
+                      contentPadding:
+                          EdgeInsets.symmetric(vertical: 0, horizontal: 10.0),
+                    ),
                     items: const [
                       DropdownMenuItem(
                         value: 'Admin',
@@ -85,7 +90,7 @@ class InputScreen extends StatelessWidget {
                         child: Text('Developer',
                             style: TextStyle(
                                 color: Colors.red,
-                                fontSize: 22,
+                                fontSize: 8,
                                 fontWeight: FontWeight.bold)),
                       ),
                       DropdownMenuItem(
@@ -99,7 +104,7 @@ class InputScreen extends StatelessWidget {
                     },
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 10,
                   ),
                   ElevatedButton(
                     child: const SizedBox(

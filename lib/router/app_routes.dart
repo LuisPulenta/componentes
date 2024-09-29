@@ -244,6 +244,7 @@ class AppRoutes {
     ),
   ];
 
+//------------------------------------------------------------------------------
   // static Map<String, Widget Function(BuildContext)> routes = {
   //   'alert': (BuildContext context) => const AlertScreen(),
   //   'card': (BuildContext context) => const CardScreen(),
@@ -252,6 +253,14 @@ class AppRoutes {
   //   'listview2': (BuildContext context) => const ListView2Screen(),
   // };
 
+//------------------------------------------------------------------------------
+  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
+    return MaterialPageRoute(
+      builder: (context) => const AlertScreen(),
+    );
+  }
+
+//------------------------------------------------------------------------------
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
 
@@ -261,11 +270,5 @@ class AppRoutes {
       appRoutes.addAll({option.route: (BuildContext context) => option.screen});
     }
     return appRoutes;
-  }
-
-  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
-    return MaterialPageRoute(
-      builder: (context) => const AlertScreen(),
-    );
   }
 }

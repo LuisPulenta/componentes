@@ -43,6 +43,8 @@ class CustomInputField extends StatelessWidget {
       },
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 0, horizontal: 10.0),
         hintText: hintText,
         labelText: labelText,
         helperText: helperText,
